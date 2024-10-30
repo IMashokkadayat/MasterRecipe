@@ -1,7 +1,9 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("kotlin-parcelize")
 }
+
 
 android {
     namespace = "com.example.recepiceapp"
@@ -51,6 +53,9 @@ android {
 
 dependencies {
 
+    val nav_version = "2.8.3"
+
+    implementation("androidx.navigation:navigation-compose:$nav_version")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.6")  // compose veiwmodel
     implementation("com.squareup.retrofit2:retrofit:2.9.0")  //network call
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")  //json to kotlin object mapping
